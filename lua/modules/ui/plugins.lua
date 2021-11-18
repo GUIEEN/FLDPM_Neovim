@@ -3,6 +3,7 @@ local conf = require("modules.ui.config")
 
 ui["kyazdani42/nvim-web-devicons"] = {opt = false}
 ui["sainnhe/edge"] = {opt = false, config = conf.edge}
+ui['sainnhe/sonokai'] = {opt = false}
 ui["hoob3rt/lualine.nvim"] = {
     opt = true,
     after = "lualine-lsp-progress",

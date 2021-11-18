@@ -5,15 +5,52 @@ local map_cmd = bind.map_cmd
 
 -- default map
 local def_map = {
+
+    -- Ex mode
+    ["|;"] = map_cmd(':'):with_noremap(),
+    -- Save and Quit
+    ["|<C-q>"] = map_cr('qall'),
+    ["|S"] = map_cr('w'):with_noremap(),
+    -- Undo
+    ["|l"] = map_cmd('u'):with_noremap(),
+
+    ["n|h"] = map_cmd('i'):with_noremap(),
+    ["n|H"] = map_cmd('I'):with_noremap(),
+    ["v|h"] = map_cmd('i'):with_noremap(),
+    ["v|H"] = map_cmd('I'):with_noremap(),
+    --[[ Cursor Movement
+        ^
+        u
+    < n   i >
+        e
+        v
+    --]]
+    ["|u"] = map_cmd('k'):with_noremap(),
+    ["|n"] = map_cmd('h'):with_noremap(),
+    ["|e"] = map_cmd('j'):with_noremap(),
+    ["|i"] = map_cmd('l'):with_noremap(),
+    ["|gu"] = map_cmd('gk'):with_noremap(),
+    ["|ge"] = map_cmd('gj'):with_noremap(),
+    ["|U"] = map_cmd('5k'):with_noremap(),
+    ["|E"] = map_cmd('5j'):with_noremap(),
+    ["|N"] = map_cmd('0'):with_noremap(),
+    ["|I"] = map_cmd('$'):with_noremap(),
+    -- Searching
+    ["|<leader><CR>"] = map_cr("nohlsearch"):with_noremap(),
+    ["|K"] = map_cmd('N'):with_noremap(),
+    ["|k"] = map_cmd('n'):with_noremap(),
+    -- Yank and Cut
+    ["n|Y"] = map_cmd('y$'),
+    ["n|D"] = map_cmd('d$'),
+    ["v|Y"] = map_cmd('"+y'),
+    -- Go to
+    ["|j"] = map_cmd('e'):with_noremap(),
+    ["|J"] = map_cmd('E'):with_noremap(),
+
     -- Vim map
     ["n|<F3>"] = map_cr("set hls!"):with_noremap():with_silent(),
     ["n|<C-x>k"] = map_cr("bdelete"):with_noremap():with_silent(),
     ["n|<C-s>"] = map_cu("write"):with_noremap(),
-    ["n|Y"] = map_cmd("y$"),
-    ["n|D"] = map_cmd("d$"),
-    ["n|n"] = map_cmd("nzzzv"):with_noremap(),
-    ["n|N"] = map_cmd("Nzzzv"):with_noremap(),
-    ["n|J"] = map_cmd("mzJ`z"):with_noremap(),
     ["n|<C-h>"] = map_cmd("<C-w>h"):with_noremap(),
     ["n|<C-l>"] = map_cmd("<C-w>l"):with_noremap(),
     ["n|<C-j>"] = map_cmd("<C-w>j"):with_noremap(),
@@ -40,14 +77,6 @@ local def_map = {
     ["c|<C-d>"] = map_cmd("<Del>"):with_noremap(),
     ["c|<C-h>"] = map_cmd("<BS>"):with_noremap(),
     ["c|<C-t>"] = map_cmd([[<C-R>=expand("%:p:h") . "/" <CR>]]):with_noremap(),
-    ["c|w!!"] = map_cmd(
-        "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!"
-    ),
-    -- Visual
-    ["v|J"] = map_cmd(":m '>+1<cr>gv=gv"),
-    ["v|K"] = map_cmd(":m '<-2<cr>gv=gv"),
-    ["v|<"] = map_cmd("<gv"),
-    ["v|>"] = map_cmd(">gv")
 }
 
 bind.nvim_load_mapping(def_map)

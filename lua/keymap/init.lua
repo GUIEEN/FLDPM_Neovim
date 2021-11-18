@@ -122,15 +122,6 @@ local plug_map = {
     ["n|<Leader>fz"] = map_cu("Telescope zoxide list"):with_noremap():with_silent(
 
     ),
-    -- Plugin accelerate-jk
-    ["n|j"] = map_cmd("v:lua.enhance_jk_move('j')"):with_silent():with_expr(),
-    ["n|k"] = map_cmd("v:lua.enhance_jk_move('k')"):with_silent():with_expr(),
-    -- Plugin vim-eft
-    ["n|f"] = map_cmd("v:lua.enhance_ft_move('f')"):with_expr(),
-    ["n|F"] = map_cmd("v:lua.enhance_ft_move('F')"):with_expr(),
-    ["n|t"] = map_cmd("v:lua.enhance_ft_move('t')"):with_expr(),
-    ["n|T"] = map_cmd("v:lua.enhance_ft_move('T')"):with_expr(),
-    ["n|;"] = map_cmd("v:lua.enhance_ft_move(';')"):with_expr(),
     -- Plugin Hop
     ["n|<leader>w"] = map_cu("HopWord"):with_noremap(),
     ["n|<leader>j"] = map_cu("HopLine"):with_noremap(),

@@ -8,7 +8,14 @@ function config.edge()
     vim.g.edge_show_eob = 1
     vim.g.edge_better_performance = 1
 end
-
+function config.sonokai()
+    vim.cmd [[set background=dark]]
+    vim.g.sonokai_style="andromeda"
+    vim.g.sonokai_italic=1
+    vim.g.sonokai_disable_italic_comment = 1
+    vim.g.sonokai_show_eob= 1
+    vim.g.sonokai_better_performance = 1
+end
 function config.lualine()
     local gps = require("nvim-gps")
 
