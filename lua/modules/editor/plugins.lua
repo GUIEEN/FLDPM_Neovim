@@ -125,5 +125,4 @@ editor["rcarriga/nvim-dap-ui"] = {
         }
     }
 }
-
 return editor

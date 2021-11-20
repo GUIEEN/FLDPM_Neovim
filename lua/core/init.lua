@@ -45,7 +45,7 @@ local disable_distribution_plugins = function()
 end
 
 local leader_map = function()
-    vim.g.mapleader = ','
+    vim.g.mapleader = ","
 end
 
 local neovide_config = function()
@@ -157,3 +157,4 @@ local load_core = function()
 end
 
 load_core()
+
