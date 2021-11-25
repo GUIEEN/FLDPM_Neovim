@@ -73,8 +73,7 @@ function config.nvim_treesitter()
         ensure_installed = "maintained",
         highlight = {
             enable = true,
-            disable = {"vim", "org"},
-            additional_vim_regex_highlighting = {"org"}
+            disable = {"vim"}
         },
         textobjects = {
             select = {

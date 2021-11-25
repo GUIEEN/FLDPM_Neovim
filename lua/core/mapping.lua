@@ -14,10 +14,10 @@ local def_map = {
     -- Undo
     ["|l"] = map_cmd('u'):with_noremap(),
 
-    ["n|h"] = map_cmd('i'):with_noremap(),
-    ["n|H"] = map_cmd('I'):with_noremap(),
-    ["v|h"] = map_cmd('i'):with_noremap(),
-    ["v|H"] = map_cmd('I'):with_noremap(),
+    ["n|k"] = map_cmd('i'):with_noremap(),
+    ["n|K"] = map_cmd('I'):with_noremap(),
+    ["v|k"] = map_cmd('i'):with_noremap(),
+    ["v|K"] = map_cmd('I'):with_noremap(),
     --[[ Cursor Movement
         ^
         u
@@ -37,8 +37,8 @@ local def_map = {
     ["|I"] = map_cmd('$'):with_noremap(),
     -- Searching
     ["|<leader><CR>"] = map_cr("nohlsearch"):with_noremap(),
-    ["|K"] = map_cmd('N'):with_noremap(),
-    ["|k"] = map_cmd('n'):with_noremap(),
+    ["|H"] = map_cmd('N'):with_noremap(),
+    ["|h"] = map_cmd('n'):with_noremap(),
     -- Yank and Cut
     ["n|Y"] = map_cmd('y$'),
     ["n|D"] = map_cmd('d$'),
